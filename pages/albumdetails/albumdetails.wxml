@@ -1,0 +1,23 @@
+<view>
+  
+  <swiper class="albumimg" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgList}}" wx:key="*this">
+      <swiper-item>
+        
+          <image class='lessionbg' src='{{item}}' mode="scaleToFill"></image>
+       
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class="jianjie">
+  <view class="tit">{{name}}</view>
+  <view class="txt">{{title}}</view>
+</view>
+<view class="pricebox">
+<text class="price">¥{{price}}</text><text class="oldprice">¥{{falseprice }}</text>
+</view>
+
+<view class="bind" data-id="{{id}}" bindtap="buy">
+参加购买已选择课程
+</view>

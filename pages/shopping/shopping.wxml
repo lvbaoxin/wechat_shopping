@@ -1,0 +1,88 @@
+<view class="container">
+	<view class="dingwei flexbox2">
+		<view class="searchbox flexitem">
+			<view class="flexbox2">
+				<image src="../../images/searchbg3.png" class="searchbg2 flexitem"></image>
+				<input placeholder="请输入想要的相关商品名称" bindtap='goSearch' value="{{searchtext}}" class="searchinput2 flexitem" disabled="true" />
+			</view>
+		</view>
+		<view class="flexitem searchbtn">
+			<navigator url="../shoppingtype/shoppingtype" hover-class="none">
+				<image src="../../images/menuicon.png" class="searchbg2 flexitem"></image>
+			</navigator>
+		</view>
+	</view>
+
+
+	<!-- tab导航栏 -->
+	<!-- scroll-left属性可以控制滚动条位置 -->
+	<!-- scroll-with-animation滚动添加动画过渡 -->
+	<scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+		<block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+			<view class="nav-item {{currentTab == idx ?'active':''}}" data-current="{{idx}}" bindtap="switchNav" data-id="{{navItem.id}}">{{navItem.name}}</view>
+		</block>
+	</scroll-view>
+	<!-- <view class='sort-wrap fd'>
+    
+    <view class="sort-btn {{select == 2 ? 'select' : ''}}" data-index="{{daindex2}}" data-sel="{{daindex2}}" bindtap="choosesort2">
+      价格
+      <image src="{{imageurl2}}"></image>
+    </view>
+    
+    <view class="sort-btn {{select == 1 ? 'select' : ''}}" data-index="{{daindex1}}" data-sel="{{daindex1}}" bindtap="choosesort1">
+      销量
+      <image src="{{imageurl1}}"></image>
+    </view>
+    <view class="sort-btn {{select == 0 ? 'select' : ''}}" data-index="{{daindex0}}" data-sel="{{daindex0}}" bindtap="choosesort0">
+      排序
+      <image src="{{imageurl0}}"></image>
+    </view>
+  </view> -->
+	<view class='sort-wrap fd'>
+
+
+		<view class="sort-btn">
+			<view style="height:40rpx;">
+				<picker bindchange="bindPickerChange" value="{{index}}" range-key="name" range="{{array}}">
+					<view class="picker">
+						排序:{{array[index].name}}
+					</view>
+				</picker>
+			</view>
+
+		</view>
+	</view>
+
+
+
+	<view>
+		<view class="flexbox">
+			<view wx:for="{{prolist}}" class="flexitem prolist" catchtap="catchTapCategory" data-goodsid="{{item.id}}">
+				<image src="{{item.thumbimage}}" class="proimage"></image>
+				<view class="textoverflow protext">
+					<view class="proname textoverflow">{{item.name}}</view>
+					<view class="prodev">{{item.title}}</view>
+					<view class="proprice">{{item.price}}</view>
+
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<!-- 页面内容 -->
+	<!-- <swiper class="tab-box" current="{{currentTab}}" duration="300" bindchange="switchTab">
+    <swiper-item wx:for="{{prolist}}" wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" class="tab-content">
+      <view class="flexbox">
+        <view wx:for="{{tabItem}}" class="flexitem prolist">
+          <image src="{{item.proimage}}" class="proimage"></image>
+          <view class="textoverflow protext">
+            <view class="proname textoverflow">{{item.proname}}</view>
+            <view class="prodev">{{item.prodev}}</view>
+            <view class="proprice">{{item.price}}</view>
+
+          </view>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper> -->
+</view>

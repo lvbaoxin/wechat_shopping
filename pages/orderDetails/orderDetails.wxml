@@ -1,0 +1,321 @@
+<view class="swiper-tab">
+  <block wx:for="{{swipertab}}" wx:key="sptab">
+    <view class="swiper-tab-list {{currtab == item.index ? 'on' : ''}}" data-current="{{item.index}}" bindtap="tabSwitch" data-id="{{item.index}}">{{item.name}}</view>
+  </block>
+</view>
+
+<!-- <scroll-view class="hot-box" scroll-y="true"> -->
+      <view class="orderDetails" wx:for="{{alreadyOrder}}" wx:key=" ">
+        
+        <view class="orderListDetails">
+          <view class="productImg">
+            <image src="{{item.go_thumbimage}}" class="cover"></image>
+          </view>
+          <view class="productInfo">
+            <text class="userName textoverflow">{{item.go_name}}</text>
+            <view class="flexbox3">
+              <view class="productTitle textoverflow">{{item.go_title}}</view>
+              <text class="productstate">{{item.status}}</text>
+            </view>
+            <text class="productTitle">规格：{{item.go_guige}}</text>
+            <view class="flexbox3">
+              <text class="orderStatus">￥{{item.go_price}}</text>
+              <text class="orderStatus">X{{item.buy_num}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="productCount">
+          <view class="allnum">
+            <text>{{item.allnum}}</text> 合计：￥
+            <text class="allmoney">{{item.price}}</text>
+          </view>
+        </view>
+        <view class="productCount" >
+          <view class="allbtn flexbox" style="justify-content: flex-end;float:right">
+            <view  class="flexitem" wx:if="{{item.status=='待付款'|| item.status =='已完成'}}">
+              <view class="btnlist" bindtap="shanchu" data-id="{{item.id}}">删除</view>
+            </view>
+            <view  class="flexitem" wx:if="{{item.status=='待付款'}}">
+              <view class="btnlist " bindtap="fukuan" data-id="{{item.id}}">付款</view>
+            </view>
+            <view  class="flexitem" wx:if="{{item.status=='待发货'}}">
+              <view class="btnlist " bindtap="cuidan" data-id="{{item.id}}">催单</view>
+            </view>
+            <view  class="flexitem" wx:if="{{item.status=='待评价'}}">
+              <view class="btnlist " bindtap="pingjia" data-id="{{item.id}}">去评价</view>
+            </view>
+            <view  class="flexitem" wx:if="{{item.status=='待评价' || item.status =='已完成'}}">
+              <view class="btnlist " bindtap="zailai" data-id="{{item.id}}">再来一单</view>
+            </view>
+            <view  class="flexitem" wx:if="{{item.status=='待收货'}}">
+              <view class="btnlist " bindtap="chakan" data-id="{{item.id}}">查看物流</view>
+            </view>
+            <view  class="flexitem" wx:if="{{item.status=='待收货'}}">
+              <view class="btnlist " bindtap="queren" data-id="{{item.id}}">确认收货</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    <!-- </scroll-view> -->
+
+
+
+
+
+
+
+
+<!-- <swiper current="{{currtab}}" class="swiper-box" duration="300" style="height:{{deviceH-31}}px" bindchange="tabChange" >-->
+  <!-- 完成 -->
+  <!-- <swiper-item> -->
+    <!-- <scroll-view class="hot-box" scroll-y="true">
+      <view class="orderDetails" wx:for="{{alreadyOrder}}" wx:key=" ">
+        <view class="productCount" wx:if="{{item.cuidanbtn}}">
+          <view class="allbtn flexbox" style="justify-content:flex-end;float:right">
+            <view class="flexitem btnlist">
+              {{item.cuidanbtn}}
+            </view>
+          </view>
+        </view>
+        <view class="orderListDetails">
+          <view class="productImg">
+            <image src="{{item.url}}" class="cover"></image>
+          </view>
+          <view class="productInfo">
+            <text class="userName textoverflow">{{item.name}}</text>
+            <view class="flexbox3">
+              <view class="productTitle">{{item.dev}}</view>
+              <text class="productstate">{{item.state}}</text>
+            </view>
+            <text class="productTitle">{{item.type}}</text>
+            <view class="flexbox3">
+              <text class="orderStatus">￥{{item.money}}</text>
+              <text class="orderStatus">￥{{item.num}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="productCount">
+          <view class="allnum">
+            <text>{{item.allnum}}</text> 合计：￥
+            <text class="allmoney">{{item.allmoney}}</text>
+          </view>
+        </view>
+        <view class="productCount" wx:if="{{item.btn.length > 0}}">
+          <view class="allbtn flexbox" style="justify-content:flex-end;float:right">
+            <view wx:for="{{item.btn}}" wx:key="*this" class="flexitem">
+              <view class="btnlist " bindtap="caozuo" data-current="{{item.text}}">{{item.text}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view> -->
+  <!-- </swiper-item> -->
+  <!-- 待付款 -->
+  <!-- <swiper-item>
+    <scroll-view class="hot-box" scroll-y="true">
+      <view class="orderDetails" wx:for="{{waitPayOrder}}" wx:key=" ">
+        <view class="orderListDetails">
+          <view class="productImg">
+            <image src="{{item.url}}" class="cover"></image>
+          </view>
+          <view class="productInfo">
+            <text class="userName textoverflow">{{item.name}}</text>
+            <view class="flexbox3">
+              <view class="productTitle">{{item.dev}}</view>
+              <text class="productstate">{{item.state}}</text>
+            </view>
+            <text class="productTitle">{{item.type}}</text>
+            <view class="flexbox3">
+              <text class="orderStatus">￥{{item.money}}</text>
+              <text class="orderStatus">￥{{item.num}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="productCount">
+          <view class="allnum">
+            <text>{{item.allnum}}</text> 合计：￥
+            <text class="allmoney">{{item.allmoney}}</text>
+          </view>
+        </view>
+        <view class="productCount"  wx:if="{{item.btn.length > 0}}">
+          <view class="allbtn flexbox" style="justify-content:flex-end;float:right">
+            <view wx:for="{{item.btn}}" wx:key="*this" class="flexitem">
+              <view class="btnlist " bindtap="caozuo" data-current="{{item.text}}">{{item.text}}</view>
+            </view>
+          </view>
+        </view>
+
+      </view>
+    </scroll-view>
+  </swiper-item> -->
+  <!-- 待发货 -->
+  <!-- <swiper-item>
+    <scroll-view class="hot-box" scroll-y="true">
+      <view class="orderDetails" wx:for="{{lostOrder}}" wx:key=" ">
+        <view class="productCount" wx:if="{{item.cuidanbtn}}">
+          <view class="allbtn flexbox" style="justify-content:flex-end;float:right">
+            <view class="flexitem btnlist">
+              {{item.cuidanbtn}}
+            </view>
+          </view>
+        </view>
+        <view class="orderListDetails">
+          <view class="productImg">
+            <image src="{{item.url}}" class="cover"></image>
+          </view>
+          <view class="productInfo">
+            <text class="userName textoverflow">{{item.name}}</text>
+            <view class="flexbox3">
+              <view class="productTitle">{{item.dev}}</view>
+              <text class="productstate">{{item.state}}</text>
+            </view>
+            <text class="productTitle">{{item.type}}</text>
+            <view class="flexbox3">
+              <text class="orderStatus">￥{{item.money}}</text>
+              <text class="orderStatus">￥{{item.num}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="productCount">
+          <view class="allnum">
+            <text>{{item.allnum}}</text> 合计：￥
+            <text class="allmoney">{{item.allmoney}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item> -->
+  <!-- 待收货 -->
+  <!-- <swiper-item>
+    <scroll-view class="hot-box" scroll-y="true">
+      <view class="orderDetails" wx:for="{{daishouhuo}}" wx:key=" ">
+        <view class="productCount" wx:if="{{item.cuidanbtn}}">
+          <view class="allbtn flexbox" style="justify-content:flex-end;float:right">
+            <view class="flexitem btnlist">
+              {{item.cuidanbtn}}
+            </view>
+          </view>
+        </view>
+        <view class="orderListDetails">
+          <view class="productImg">
+            <image src="{{item.url}}" class="cover"></image>
+          </view>
+          <view class="productInfo">
+            <text class="userName textoverflow">{{item.name}}</text>
+            <view class="flexbox3">
+              <view class="productTitle">{{item.dev}}</view>
+              <text class="productstate">{{item.state}}</text>
+            </view>
+            <text class="productTitle">{{item.type}}</text>
+            <view class="flexbox3">
+              <text class="orderStatus">￥{{item.money}}</text>
+              <text class="orderStatus">￥{{item.num}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="productCount">
+          <view class="allnum">
+            <text>{{item.allnum}}</text> 合计：￥
+            <text class="allmoney">{{item.allmoney}}</text>
+          </view>
+        </view>
+        <view class="productCount"  wx:if="{{item.btn.length > 0}}">
+          <view class="allbtn flexbox" style="justify-content:flex-end;float:right">
+            <view wx:for="{{item.btn}}" wx:key="*this" class="flexitem">
+              <view class="btnlist " bindtap="caozuo" data-current="{{item.text}}">{{item.text}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item> -->
+  <!-- 已完成 -->
+  <!-- <swiper-item>
+    <scroll-view class="hot-box" scroll-y="true">
+      <view class="orderDetails" wx:for="{{yiwancheng}}" wx:key=" ">
+        <view class="productCount" wx:if="{{item.cuidanbtn}}">
+          <view class="allbtn flexbox" style="justify-content:flex-end;float:right">
+            <view class="flexitem btnlist">
+              {{item.cuidanbtn}}
+            </view>
+          </view>
+        </view>
+        <view class="orderListDetails">
+          <view class="productImg">
+            <image src="{{item.url}}" class="cover"></image>
+          </view>
+          <view class="productInfo">
+            <text class="userName textoverflow">{{item.name}}</text>
+            <view class="flexbox3">
+              <view class="productTitle">{{item.dev}}</view>
+              <text class="productstate">{{item.state}}</text>
+            </view>
+            <text class="productTitle">{{item.type}}</text>
+            <view class="flexbox3">
+              <text class="orderStatus">￥{{item.money}}</text>
+              <text class="orderStatus">￥{{item.num}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="productCount">
+          <view class="allnum">
+            <text>{{item.allnum}}</text> 合计：￥
+            <text class="allmoney">{{item.allmoney}}</text>
+          </view>
+        </view>
+        <view class="productCount"  wx:if="{{item.btn.length > 0}}">
+          <view class="allbtn flexbox" style="justify-content:flex-end;float:right">
+            <view wx:for="{{item.btn}}" wx:key="*this" class="flexitem">
+              <view class="btnlist " bindtap="caozuo" data-current="{{item.text}}">{{item.text}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item> -->
+  <!-- 待评价 -->
+  <!-- <swiper-item>
+    <scroll-view class="hot-box" scroll-y="true">
+      <view class="orderDetails" wx:for="{{daipingjia}}" wx:key=" ">
+        <view class="productCount" wx:if="{{item.cuidanbtn}}">
+          <view class="allbtn flexbox" style="justify-content:flex-end;float:right">
+            <view class="flexitem btnlist">
+              {{item.cuidanbtn}}
+            </view>
+          </view>
+        </view>
+        <view class="orderListDetails">
+          <view class="productImg">
+            <image src="{{item.url}}" class="cover"></image>
+          </view>
+          <view class="productInfo">
+            <text class="userName textoverflow">{{item.name}}</text>
+            <view class="flexbox3">
+              <view class="productTitle">{{item.dev}}</view>
+              <text class="productstate">{{item.state}}</text>
+            </view>
+            <text class="productTitle">{{item.type}}</text>
+            <view class="flexbox3">
+              <text class="orderStatus">￥{{item.money}}</text>
+              <text class="orderStatus">￥{{item.num}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="productCount">
+          <view class="allnum">
+            <text>{{item.allnum}}</text> 合计：￥
+            <text class="allmoney">{{item.allmoney}}</text>
+          </view>
+        </view>
+        <view class="productCount"  wx:if="{{item.btn.length > 0}}">
+          <view class="allbtn flexbox" style="justify-content:flex-end;float:right">
+            <view wx:for="{{item.btn}}" wx:key="*this" class="flexitem">
+              <view class="btnlist " bindtap="caozuo" data-current="{{item.text}}">{{item.text}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item> -->
+
+<!-- </swiper> -->

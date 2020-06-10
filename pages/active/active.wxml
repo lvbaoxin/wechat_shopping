@@ -1,0 +1,37 @@
+<view class="lession">
+  <view class="container products">
+    <view class="products-top">
+      <view class="pro-title">推荐活动</view>
+      <view>
+       
+      </view>
+    </view>
+  </view>
+
+  <view class="pro ">
+ 		<view wx:for="{{activity}}" wx:key="{{item.activitytext}}" class="activitylist flexbox " data-id="{{item.id}}" bindtap="activedetail">
+
+ 			<image src="{{item.smallimage}}" class="activityimage flexitem {{item.grey == 1 ? 'grey':''}}"></image>
+ 			<view class="activitytext flexitem">
+ 				<view class="activityname textoverflow2">{{item.name}}</view>
+ 				<text class="activityteacher">{{item.stitle}}</text>
+
+ 				<view>
+ 					<image src="../../images/icon1.png" class="icon1"></image>
+ 					<text class="activitytime">开始时间：{{item.starttime}}</text>
+ 					<text class="activitytime">结束时间：{{item.starttime}}</text>
+					 <view>
+ 					<image src="../../images/icon2.png" class="icon2"></image>
+ 					<text class="activitypeople">参加人数：{{item.submit_num}}人</text>
+					 </view>
+ 				</view>
+
+ 			</view>
+ 		</view>
+
+ 	</view>
+ 
+  
+
+
+</view>

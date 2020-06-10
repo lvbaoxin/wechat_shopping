@@ -1,0 +1,64 @@
+<view class="lessiontop">
+  <view class="dingwei flexbox2">
+  <form bindsubmit="formSubmit">
+    <view class="searchbox flexitem">
+      <view class="flexbox2">
+        <image src="../../images/searchbg2.png" class="searchbg2 flexitem">searchbg2</image>
+        <input placeholder="输入想要查询的课程或关键字" name='search' class="searchinput2 flexitem" />
+      </view>
+    </view>
+    <!-- <view class="flexitem searchbtn">
+      搜索
+    </view> -->
+     <button formType="submit" class="flexitem searchbtn">搜索</button>
+    </form>
+  </view>
+
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgList}}" wx:key="*this">
+      <swiper-item>
+        <navigator url="{{item.link}}" hover-class="none">
+          <image class='lessionbg' src='{{item.bannerimage}}'></image>
+        </navigator>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="container lesslink">
+    <view class="index-link flexbox">
+      <view wx:for="{{indexlink}}" class="linklist" wx:key="{{index}}">
+        <navigator url="{{item.link}}" hover-class="none">
+          <image src="{{item.imagepath}}" class="linkimg"></image>
+          <text class="linktext">{{item.text}}</text>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class="lession">
+  <view class="container products">
+    <view class="products-top">
+      <view class="pro-title" style="border:none">热门推荐</view>
+      <view>
+        <navigator class="pro-more" url="../lessiontype/lessiontype" hover-class="none">查看更多 ></navigator>
+      </view>
+    </view>
+  </view>
+
+  <view class="pro ">
+    <view wx:for="{{activity}}" wx:key="{{item.activitytext}}" class="activitylist flexbox ">
+
+      <image src="{{item.smallimage}}" class="activityimage flexitem" data-id="{{item.id}}" bindtap="details"></image>
+      <view class="activitytext flexitem">
+        <view class="activityname textoverflow2">{{item.name}}</view>
+        <view class="flexbox" style="margin-top:20rpx; justify-content: space-between;">
+          <view class="activitypeople flexitem">{{item.sell_num}}人购买</view>
+          <view class="seedetails flexitem" hover-class="none" data-id="{{item.id}}" bindtap="details">查看详情</view>
+        </view>
+
+      </view>
+    </view>
+
+  </view>
+</view>

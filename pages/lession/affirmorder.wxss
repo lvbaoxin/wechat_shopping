@@ -1,0 +1,9 @@
+.affirmtop{font-size:28rpx;border-bottom:1rpx solid #dbdbdb;height:123rpx;width:96%;margin:0 auto 20rpx;line-height: 50rpx;}
+.jianj{font-size:26rpx;font-weight: bold;}
+.neir{font-size:22rpx;}
+.orderimg{width:218rpx;height:126rpx;margin-right: 20rpx;border-radius: 10rpx;}
+.orderlist{width:96%;margin:0 auto;font-size:26rpx;border-bottom:1rpx solid #dbdbdb;height:128rpx;padding:90rpx 0px;}
+.time{color:#696969;margin-top:30rpx;}
+.pos{position: absolute;bottom:0;width:100%;}
+.tijiao{float:right;width:193rpx;height:76rpx;background: #5578fb;text-align: center;line-height: 76rpx;color:#fff;font-size:32rpx;}
+.price{float:left;padding-left:15rpx;padding-top:15rpx;}

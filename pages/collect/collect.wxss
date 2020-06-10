@@ -1,0 +1,35 @@
+.productsbox {
+  height: 500rpx;
+}
+.products-top {
+  height: 100rpx;
+  border-bottom: 2rpx solid #f3f4f6;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pro-title {
+  border-left: 6rpx solid #5578fb;
+  font-size: 32rpx;
+  font-weight: bold;
+  padding-left: 10rpx;
+}
+
+.pro-more {
+  font-size: 30rpx;
+  color: #989898;
+}
+.activityimage{
+  width:196rpx;height:196rpx;
+}
+.activitytext{width:458rpx;height:196rpx;}
+.activitytype{font-size:28rpx;color:#909090;margin-top:10rpx;}
+.activitypeople{color:#d0323d;font-size:40rpx;}
+.seedetails{width:174rpx;height:57rpx;background:#5578fb;color:#fff;border-radius: 24rpx;font-size:32rpx;text-align: center;line-height: 57rpx;}
+.lession{padding-bottom:30rpx;margin-top:145rpx}
+.activitylist{
+  border-bottom:2rpx solid #e5e5e5;height: 240rpx
+}

@@ -1,0 +1,70 @@
+.userinfo{background:#4768f2;height:230rpx;position: relative}
+.userbox{background:#fff;border-radius: 10rpx;position: absolute;transform: translate(-50%);left:50%;width:94%;height:200rpx;top:100rpx;box-shadow: 0rpx 5rpx 5rpx 0rpx #eeeff2;}
+.user{width:132rpx;height:132rpx;border:6rpx solid #fff;z-index: 2;position: absolute;transform: translate(-50%);left:50%;top:-80rpx;border-radius: 132rpx;}
+.usertext{text-align: center;margin-top:80rpx;}
+.username{font-size:36rpx;color:#3e3e3e}
+.usertel{font-size:30rpx;color:#b8b8b8}
+.lesslink{width:94%;background:#fff;height:196rpx;border-radius: 10rpx;box-shadow: 0rpx 3rpx 5rpx 5rpx #eff0f2;margin-top:100rpx}
+.linklist {
+  box-sizing: border-box;
+  width: 25%;
+  margin-top:20rpx;
+}
+
+.linkimg {
+  width: 82rpx;
+  display: block;
+  height: 82rpx;
+  flex-wrap: wrap;
+  text-align: center;
+  align-content: flex-center;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.linktext {
+  text-align: center;
+  display: block;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+}
+.userbottom{width:94%;background:#fff;height:447rpx;border-radius: 10rpx;box-shadow: 0rpx 3rpx 5rpx 5rpx #eff0f2;margin:30rpx auto;
+color:#7b7b7b;font-size:32rpx;
+}
+.usertool{border-left: 7rpx solid #4768f3;padding-left:15rpx;}
+.toolleft{width:200rpx;}
+.toollist{height:100rpx;border-bottom:1rpx solid #f0f0f0;line-height: 100rpx;}
+.toolimg{width:54rpx;height:54rpx;}
+.toolnext{width:18rpx;height:30rpx;}
+
+.getuserbar{width:100%;height:100vh;background:rgba(0, 0, 0, 0.4);position:absolute;top:0;}
+.getuser{width:90%;height:377rpx;background:rgba(255,255,255,1);border-radius:16rpx 16rpx 0px 0px; position: absolute;bottom:0;padding:23rpx 45rpx 0rpx 45rpx;z-index: 2}
+.getusertop{display: flex;justify-content:flex-start;align-items: center;align-content: center;flex-direction: row}
+.logo{width:64rpx;height:64rpx; box-sizing:border-box}
+.logo image{width:100%;height:100%}
+.gettit{font-size:30rpx;font-weight:bold;color:rgba(14,14,14,1);line-height:52rpx;box-sizing:border-box;margin-left:10rpx;}
+.getdev{
+border-bottom:2rpx solid rgba(239,239,239,1);
+font-size:28rpx;
+font-weight:500;
+color:rgba(24,24,24,1);
+line-height:52rpx;
+padding:35rpx 0;
+}
+.gettxt{font-size:28rpx;
+font-weight:500;
+color:rgba(160,165,171,1);
+line-height:52rpx;padding:25rpx 0 35rpx}
+.getuserbtn{
+  height:80rpx;
+background:rgba(242,244,247,1);
+border-radius:16rpx;
+font-size:32rpx;
+font-weight:500;
+color:rgba(51,51,51,1);
+border:none;
+}
+.getuserbtn::after{
+  border:none;
+}

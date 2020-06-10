@@ -1,0 +1,39 @@
+<!--pages/addProComment/addProComment.wxml-->
+<form bindsubmit="hrSubmit">
+  <view class='content'>
+    <view class='form'>
+      <view class='textarea'>
+        <textarea id='advice' name="advice" type="text" maxlength="{{max}}" bindinput="inputs" value="{{advice}}" placeholder="宝贝满足你的期待么？说说他的优点和美中不足的地方吧" placeholder-class='p_s'></textarea>
+        <!-- <view class='fontNum'>{{fontNum}}</view> -->
+      </view>
+
+    </view>
+    <view class='picture'>
+    <view class='picture' wx:if="{{!is_upload}}">
+      <view class='picture_item' bindtap="chooseImage">
+        <image src='{{camera_pic}}' mode="widthFix" />
+      </view>
+    </view>
+    <view class='picture' wx:if="{{upload_pic.length>0}}">
+      <view class='picture_upload' bindtap="" wx:for-items="{{upload_pic}}" wx:for-item="pic" wx:key="index">
+        <image src='{{pic}}' />
+        <view class='picture_delete' bindtap='deletePic' data-pic_index='{{index}}'>
+          <image src='{{delete_ico}}' />
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="flexbox3 xiamian">
+    <view class="flexitem wenzi">
+    <label class="checkbox" >
+    <switch name="switch"/>匿名
+  </label>
+    </view>
+    <view class="flexitem wenzi">
+    你的评价能帮助其他小伙伴呦
+    </view>
+  </view>
+  </view>
+  
+  <button class='submit' formType="submit"> 发布 </button>
+</form>

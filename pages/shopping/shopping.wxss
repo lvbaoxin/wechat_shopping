@@ -1,0 +1,128 @@
+.dingwei {
+    margin: 0 auto;
+    width: 94%;
+}
+
+.searchbg2 {
+    width: 36rpx;
+    height: 36rpx;
+    margin-left: 20rpx;
+}
+
+.searchbox {
+    width: 578rpx;
+    height: 59rpx;
+    background: #e5e5e5;
+    border-radius: 30rpx;
+}
+
+.searchinput2 {
+    font-size: 24rpx;
+    width: 100%;
+    height: 59rpx;
+    margin-left: 20rpx;
+}
+
+.searchbtn {
+    color: #fff;
+    font-size: 30rpx;
+    width: 80rpx;
+    margin-left: 20rpx;
+}
+
+page {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+
+.container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 96%;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+}
+
+.nav {
+    height: 90rpx;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    line-height: 80rpx;
+
+    font-size: 32rpx;
+    white-space: nowrap;
+    /*position: fixed;
+    top: 100rpx;
+    left: 0;*/
+    z-index: 99;
+}
+
+.nav-item {
+    width: 15%;
+    display: inline-block;
+    text-align: center;
+}
+
+.nav-item.active {
+    color: #5578fb;
+    border-bottom: 4rpx solid #5578fb;
+    border-radius: 4rpx
+}
+
+.tab-box {
+    background: #fff;
+    padding-top: 25rpx;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.tab-content {
+    overflow-y: scroll;
+}
+
+.prolist {
+    width: 346rpx;
+    /* height: 349rpx; */
+    border-radius: 4rpx;
+    overflow: hidden;
+    background: #fff;
+    margin-bottom: 20rpx;
+}
+
+.proimage {
+    height: 227rpx;
+    width: 100%;
+}
+
+.protext {
+    text-align: center
+}
+
+.proname {
+    font-size: 28rpx;
+    font-weight: bold;
+}
+
+.prodev {
+    font-size: 24rpx;
+    color: #b0bbc1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.proprice {
+    font-size: 26rpx;
+    color: #ff5c4a
+}
+
+.sort {
+    width: 100%;
+    height: 50rpx;
+    background: #ddd;
+    display: flex;
+}

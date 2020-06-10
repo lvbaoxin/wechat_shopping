@@ -1,0 +1,83 @@
+<!--pages/shoppingCart/shoppingCart.wxml-->
+<checkbox-group bindchange="checkboxChange">
+<view class='' hidden="{{iscart}}">
+
+  <view class='header'>
+    <!-- <text class='title'>购物车</text> -->
+    <block wx:if="{{isDelete==0}}">
+      <view class="icon-right ">
+      <text class="green " bindtap="getEdit">编辑</text>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="icon-right">
+      <text class="green" bindtap="getEdit">完成</text>
+      </view>
+    </block>
+  </view>
+  <view class="cart-list">
+    <view class="cart-box"  wx:for-index="idx" wx:key="*">
+      <!-- <view class="cart-shop" >
+        <icon type="circle" size="23" wx:if="{{!item.shopCheck}}" bindtap='storeselected' data-index="{{idx}}"></icon> 
+        <icon type="success" size="23" wx:if="{{item.shopCheck}}" bindtap='storeselected' data-index="{{idx}}"></icon>-->
+        <!-- <view class="shop-name">
+        <image src="../../images/icon4.png" class="shopicon"></image>
+        {{item.shop_name}}
+        <image src="../../images/toolicon4.png" class="toolnext"></image>
+        </view>
+      </view> -->
+      <view class='section section-good'>
+          <view class='good' wx:for='{{cartList}}' wx:key="{{index}}">
+            <view hidden="{{checkall}}">
+            <checkbox data-id="{{item.id}}" value="{{item.id}}" checked="{{item.checked}}"/>{{item.value}}
+            </view>
+            <!-- <icon type="circle" size="23" wx:if="{{!item.check}}" bindtap='goodsselected' data-index="{{index}}" data-select-index="{{idx}}" data-goodsid="{{item.goods_id}}"></icon>
+            <icon type="success" size="23" wx:if="{{item.check}}" bindtap='goodsselected' data-index="{{index}}" data-select-index="{{idx}}" data-goodsid="{{item.goods_id}}"></icon> -->
+            <image class='cover' src='{{item.thumbimage}}'></image>
+            <view class='content'>
+              <view class='text name'>{{item.name}}</view>
+              <view class='stepper'>
+                <view class='text price'>¥{{item.price}}</view>
+                <button class='subtract' disabled="{{item.goods_num < 2 ? 'disabled' : ''}}"  data-id="{{item.id}}" bindtap='reduce' data-select-index="{{idx}}">-</button>
+                <input class='count' type='number' value='{{item.goods_num}}' disabled='disabled'></input>
+                <button class='add' bindtap='add'  data-id="{{item.id}}" data-select-index="{{idx}}">+</button>
+              </view>
+            </view>
+          </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='section-bottom'>
+    <!-- <checkbox-group bindchange="selectalltap">
+      <label class='checkbox-allcheck'>
+        <checkbox value="" checked="{{allsel}}" hidden='hidden'/>
+        <icon type="circle" size="23" wx:if="{{!allsel}}"></icon>
+        <icon type="success" size="23" wx:if="{{allsel}}"></icon>
+        <text class='check-all-text'>全选</text>
+      </label>
+    </checkbox-group> -->
+    <block wx:if="{{isDelete==0}}">
+      <view class="total">
+      <text class="pricelable">（不含税）:</text>  
+        <view class='totalPrice'>
+        <text>¥{{total}}</text>
+        </view>
+      </view>
+      <view class='btn btn-default' bindtap="Settlement">去结算</view>
+    </block>
+    <block wx:else>
+      <view class="delete" bindtap="deleteList">删除</view>
+    </block>
+    
+  </view>
+
+</view>
+<view class='container noshopCart' hidden='{{!iscart}}'>
+
+  <image class="noshopimg" src="../../images/noshop.png"></image>
+  <!-- <view class="no-shop">还是空的，去挑选喜欢的商品吧~</view> -->
+  <view class="shopping-btn">去购物</view>
+ 
+</view>
+</checkbox-group>

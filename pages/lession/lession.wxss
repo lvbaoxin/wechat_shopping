@@ -1,0 +1,77 @@
+/* pages/lession/lession.wxss */
+.lessionbg{width:100%;}
+swiper{height:405rpx;}
+.lessiontop{position: relative;}
+.dingwei{position: absolute;transform: translate(-50%); left:50%;top:20rpx;z-index: 2;width:90%;margin:0 auto;}
+.searchbg2{width:30rpx;height:30rpx;margin-left:20rpx;}
+.searchbox{width:560rpx;height:59rpx;background: #ffffff;border-radius: 30rpx;float:left;}
+.searchinput2 {
+  font-size: 24rpx;
+  width:100%;
+  height:59rpx;
+  margin-left:20rpx;
+}
+.searchbtn{color:#fff;font-size:30rpx;width: 80rpx !important;background-color: transparent;
+margin-left: 20rpx !important;padding:0px !important;float:right;padding-top:5px !important;
+}
+.lesslink{width:94%;position: absolute;transform: translate(-50%); left:50%;background:#fff;height:196rpx;border-radius: 10rpx;top:85%;box-shadow: 0rpx 5rpx 5rpx 0rpx #e6f6f2}
+.linklist {
+  box-sizing: border-box;
+  width: 25%;
+  margin-top:20rpx;
+}
+
+.linkimg {
+  width: 82rpx;
+  display: block;
+  height: 82rpx;
+  flex-wrap: wrap;
+  text-align: center;
+  align-content: flex-center;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.linktext {
+  text-align: center;
+  display: block;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+}
+.productsbox {
+  height: 500rpx;
+}
+.products-top {
+  height: 100rpx;
+  border-bottom: 2rpx solid #f3f4f6;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pro-title {
+  border-left: 6rpx solid #5578fb;
+  font-size: 32rpx;
+  font-weight: bold;
+  padding-left: 10rpx;
+}
+
+.pro-more {
+  font-size: 30rpx;
+  color: #989898;
+}
+.activityimage{
+  width:258rpx;height:156;
+}
+.activitytext{width:350rpx;height:141rpx;}
+.seedetails{width:116rpx;height:38rpx;border:1rpx solid #5578fb;color:#5578fb;border-radius: 10rpx;font-size:24rpx;text-align: center;}
+.lession{padding-bottom:30rpx;margin-top:145rpx}
+
+.le-img {
+  width: 100%;
+  display: block;
+}
+

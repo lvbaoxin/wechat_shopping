@@ -1,0 +1,5 @@
+page{background:url(https://lytx.pskjcs.cn/public/uploads/img/img789.png) no-repeat;background-size:100%;}
+.box{width:470rpx;height:443rpx;background:url(https://lytx.pskjcs.cn/public/uploads/img/img123.png) no-repeat;background-size:100%;margin:570rpx auto 80rpx;}
+.ewm{width:370rpx;height:370rpx;margin:35rpx auto;}
+.box{text-align: center}
+.sharetxt{text-align: center;font-size:32rpx;}

@@ -1,0 +1,30 @@
+<view class='container-con' style='margin-bottom:121rpx;'>
+
+
+
+		<block wx:for="{{rows}}" wx:key="{{index}}">
+			<view class='addList' data-bean='{{item}}'>
+
+				<view class='addList-header'>
+					
+					<view class='addList-content'>
+
+						<view class='userInfo' bindtap="gonext" data-classid="{{item.lesson_id}}">
+							
+							<text style="color:#765df7">◎{{item.name}}</text>
+						</view>
+
+						<!-- <view class='userInfo'>
+							
+							<text style='margin-left:16rpx'>{{item.mobile}}</text>
+						</view> -->
+
+
+					</view>
+				</view>
+
+
+			</view>
+		</block>
+
+</view>

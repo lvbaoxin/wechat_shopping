@@ -1,0 +1,24 @@
+<view class="affirmtop">
+  <view class="flexitem">购买账号：{{user_nickname}}</view>
+  <view class="flexitem">订单时间：{{order_time}}</view>
+</view>
+
+<view class="affirmtop" style="border:none;">
+  <view class="flexitem jianj">该系列课程包含以下课程：</view>
+  <view class="flexitem neir">购买后不支持退款、转让，请确认开课时间或有效期后再提交订单已购买过的课程会从实付金额中扣除</view>
+</view>
+
+<!-- <block wx:for="{{orderlist}}"> -->
+  <view class="flexbox3 orderlist">
+    <!-- <view class="flexitem"><checkbox disabled="{{item.check}}" checked="{{item.checked}}" cloor="#5578fb"></checkbox></view> -->
+    <view class="flexitem"><image src="{{smallimage}}" class="orderimg"></image></view>
+    <view class=" ">
+      <view class="textoverflow jianj">{{name}}</view>
+      <view class="time">{{title}}</view>
+    </view>
+  </view>
+<!-- </block> -->
+<view class=" pos">
+  <view class=" price">实付金额:<text style="color:#5578fb">￥{{price}}</text>  </view>
+  <view class=" tijiao" bindtap="pay" data-id="id">立即支付</view>
+</view>

@@ -1,0 +1,88 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/ruzhu/ruzhu",
+    "pages/active/active",
+    "pages/active/active-details",
+    "pages/my/my",
+    "pages/feedback/feedback",
+    "pages/share/share",
+    "pages/shopcar/shopcar",
+    "pages/carAddress/carAddress",
+    "pages/lession/lession",
+    "pages/selectclass/selectclass",
+    "pages/addAddress/addAddress",
+    "pages/pingjia/pingjia",
+    "pages/myAddress/myAddress",
+    "pages/lessiontype/lessiontype",
+    "pages/lessionalbum/lessionalbum",
+    "pages/mylession/mylession",
+    "pages/address/address",
+    "pages/shopping/shopping",
+    "pages/shopping/details",
+    "pages/carorder/carorder",
+    "pages/shoppingtype/shoppingtype",
+    "pages/search-details/search-details",
+    "pages/orderDetails/orderDetails",
+    "pages/exitAddress/exitAddress",
+    "pages/login/login",
+    "pages/albumdetails/albumdetails",
+    "pages/video/video",
+    "pages/affirmorder/affirmorder",
+    "pages/message/message",
+    "pages/logistics/logistics",
+    "pages/about/about",
+    "pages/lession/affirmorder",
+    "pages/collect/collect"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/indexbar1.png",
+        "selectedIconPath": "/images/indexbar.png"
+      },
+      {
+        "pagePath": "pages/lession/lession",
+        "text": "课程",
+        "iconPath": "/images/lessionbar.png",
+        "selectedIconPath": "/images/lessionbar-on.png"
+      },
+      {
+        "pagePath": "pages/shopping/shopping",
+        "text": "商城",
+        "iconPath": "/images/shopbar.png",
+        "selectedIconPath": "/images/shopbar-on.png"
+      },
+      {
+        "pagePath": "pages/shopcar/shopcar",
+        "text": "购物车",
+        "iconPath": "/images/shoppingcarbar.png",
+        "selectedIconPath": "/images/shoppingcarbar-on.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "/images/mybar.png",
+        "selectedIconPath": "/images/mybar-on.png"
+      }
+    ],
+    "backgroundColor": "#fff",
+    "color": "#3d474d",
+    "selectedColor": "#5578fb"
+  }
+}

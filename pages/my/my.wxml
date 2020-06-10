@@ -1,0 +1,80 @@
+<view style="position: relative;">
+<view class="userinfo">
+  <view class="userbox">
+
+    <image  wx:if="{{avatarUrl}}" src="{{avatarUrl }}" class="user"></image>
+    <view class="usertext">
+      <view class="username">{{nickName}}</view>
+      <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" size="mini" hidden="{{getphone}}">获取手机号</button>
+      <view class="usertel">{{tel}}</view>
+    </view>
+  </view>
+</view>
+
+
+<view class="container lesslink">
+  <view class="index-link flexbox">
+    <view class="linklist" >
+      <navigator url="../orderDetails/orderDetails" hover-class="none">
+        <image src="../../images/userlink1.png" class="linkimg"></image>
+        <text class="linktext">订单</text>
+      </navigator>
+    </view>
+    <view class="linklist" >
+      <navigator url="../share/share" hover-class="none">
+        <image src="../../images/userlink2.png" class="linkimg"></image>
+        <text class="linktext">分享</text>
+      </navigator>
+    </view>
+    <!-- <view class="linklist" >
+      <navigator url="../collect/collect" hover-class="none">
+        <image src="../../images/userlink3.png" class="linkimg"></image>
+        <text class="linktext">我的收藏</text>
+      </navigator>
+    </view> -->
+    <view class="linklist" bindtap="address" >
+      
+        <image src="../../images/userlink4.png" class="linkimg"></image>
+        <text class="linktext">地址管理</text>
+     
+    </view>
+    
+  </view>
+</view>
+
+<view class="userbottom">
+  <view style="padding:20rpx 0px">
+    <view class="usertool">必备工具</view>
+  </view>
+  <view class="toollist " wx:for="{{toollist}}">
+  <navigator url="{{item.link}}" hover-class="none">
+    <view style="width:94%;margin:0 auto;" class="flexbox3">
+      <view class="flexitem toolleft flexbox3">
+        <image src="{{item.imagepath}}" class="toolimg"></image>
+        <text>{{item.text}}</text>
+      </view>
+      <view class="flexitem toolright">
+        <image src="{{item.next}}" class="toolnext"></image>
+      </view>
+    </view>
+    </navigator>
+  </view>
+</view>
+
+<view class="getuserbar" hidden="{{getuserbar}}">
+ 	<view class="getuser">
+ 		<view class="getusertop">
+ 		
+ 			<view class="gettit">布尔研学商城</view>
+ 		</view>
+ 		<view class="getdev">
+ 			为了更好的给您提供服务，需要申请以下权限：
+ 		</view>
+ 		<view class="gettxt">
+ 			·获得你的公开信息（昵称、头像等）
+ 		</view>
+ 		<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 好的 </button>
+
+ 	</view>
+ </view>
+ </view>

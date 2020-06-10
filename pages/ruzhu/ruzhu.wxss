@@ -1,0 +1,10 @@
+page{background:url(https://lytx.pskjcs.cn/public/uploads/img/img456.png) no-repeat;background-size:100%;}
+.shuruk{width:74%;margin:170rpx auto;padding:30rpx 0;}
+.list{height:110rpx;border-bottom:1rpx solid #ddd;font-size:28rpx;background:#fff;}
+.listtextarea{width:100%;background:#fff;border-bottom:1rpx solid #ddd;padding:20rpx 0;}
+.lists{font-size:28rpx;line-height: 30rpx;}
+.btns{width:184rpx;height:48rpx;padding:0;border-radius: 5rpx;font-size:24rpx;color:#fff;background:linear-gradient(to right,#37adff ,#1366ff);line-height: 48rpx;text-align:center}
+
+.feedbackbtn{
+  border-radius: 10rpx; background-image: linear-gradient(to right, #765df7, #537afb);width:100%; font-size:30rpx;color:#fff;padding:0rpx;margin:20rpx auto;height:78rpx;line-height: 78rpx;
+}

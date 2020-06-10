@@ -1,0 +1,118 @@
+<scroll-view>  
+  <view class='shipping-address border-bottom'>
+    <view class='address-info' wx:if="{{addr_name}}">
+      <view class='info-title'><text>收件人：{{addr_name}}</text><text class='num'>{{addr_mobile}}</text></view>
+      <view class='info-main'>
+        <view class=''><text>收件地址：{{addr_prov}} {{addr_city}} {{addr_area}} {{addr_address}}</text></view>
+        <view class="main-right" bindtap="bianJi" data-id="{{item.id}}" ><text class='info-text'>修改</text><image src='../../images/icon_arrow.png' class='info-arrow right-arrow'></image></view>
+      </view>
+    </view>
+
+    <view class='select-address' wx:else bindtap="addaddress">
+      <text class='sign'>+</text><text>点击选择收货地址</text>
+    </view> 
+  </view>
+
+  
+
+  
+
+  <view class='order-list'>
+    <!-- <view class='coupon'>
+    <image src='../../images/icon6.png' class='img'></image>
+    <text class='txt'>效果料理专家店 ＞</text>
+  </view> -->
+    
+
+    <view class='order-info' wx:for="{{alreadyOrder}}" wx:key="{{index}}">
+      <view class="orderListDetails">
+          <view class="productImg">
+            <image src="{{item.thumbimage}}" class="cover"></image>
+          </view>
+          <view class="productInfo">
+            <text class="userName textoverflow">{{item.name}}</text>
+            
+            <text class="productTitle">{{item.guige}}</text>
+            <view class="flexbox3">
+              <text class="orderStatus" style="color:red">￥{{item.price}}</text>
+              <text class="orderStatus">{{item.num}}</text>
+            </view>
+          </view>
+        </view>
+    </view>
+
+    <!-- <view class='delivery-time order-page-border'>
+      <view><text>配送方式</text></view>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{multiArray}}" >
+        <view class='time'>
+          <text class='delivery-text'>{{multiArray[index]}}</text>
+          <image src='../../images/icon_arrow.png' class='delivery-arrow right-arrow'></image>
+        </view>
+      </picker>
+    </view> -->
+
+    <!-- <view class='order-bill order-page-border'>
+      <view><text>优惠券</text></view>
+      <picker bindchange="bindyouhuiquan" value="{{youhuiquan[index2]}}" range="{{youhuiquan}}">
+        <view class='time'>
+          <text class='delivery-text'>{{youhuiquan[index2]}}</text>
+          <image src='../../images/icon_arrow.png' class='delivery-arrow right-arrow'></image>
+        </view>
+      </picker>
+    </view> -->
+
+    <view class='order-bill order-page-border'>
+      <view><text>运费</text></view>
+      <view class='bill'>
+         <view class='time'>
+          <text>{{postageprice}}元</text>
+          
+        </view>
+      </view>
+    </view>
+
+    <view class='order-comment'>
+      <view class='comment-text float-left'>备注留言:</view>
+      <input type='text' name="ordercomment" value="{{ordercomment}}" bindblur='ordercomment' placeholder='请注明,是否需要清洗要求'></input>
+    </view>
+
+    <view class='forward-hander order-page-border'>
+      <text class='hander-txt'></text>
+      <text>共{{num_all}}件商品 小计：<text style="color:red">{{price_all}}</text></text>
+    </view>
+  </view>
+
+  <view class='forward-sale'>
+
+    <view class='forward-bill order-page-border'>
+      <text>选择支付方式</text>
+      
+    </view>
+
+    <view class='order-comment order-page-border' style="margin-bottom: 200rpx;">
+      <view class='comment-text float-left' style="width:80rpx;">
+        <image src="../../images/wxpay.png" class="wxpay"></image>
+      </view>
+      <text>微信支付</text>
+      <view class='time' style="float:right">
+          <checkbox disabled checked="true" value="微信支付"></checkbox>
+          
+        </view>
+      
+    </view>
+
+  </view>
+
+  
+
+
+  <view class='flex-footer'>
+    
+
+    <view class='footer-confirm'>
+      <view class='total'><text class='one'>合计 : </text><text class='two'>{{price_all}}</text></view>
+      <view class='confirm-buttom' bindtap="confirmbuttom"><text>提交</text></view>
+    </view>
+  </view>
+
+</scroll-view>

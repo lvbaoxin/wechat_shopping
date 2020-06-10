@@ -1,0 +1,128 @@
+/**app.wxss**/
+
+.container {
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 96%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.hr {
+  width: 100%;
+  height: 20rpx;
+  background: #f5f5f5;
+}
+.flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-center;
+  align-items: center;
+  justify-content: space-around;
+}
+.flexbox::after {
+  content: "";
+  width: 50%;
+}
+.flexbox2{
+ box-sizing: border-box;
+  display: flex;
+  align-content: flex-center;
+  align-items: center;
+  justify-content: flex-start; 
+}
+.flexbox3{
+ box-sizing: border-box;
+  display: flex;
+  align-content: flex-center;
+  align-items: center;
+  justify-content: space-between;
+}
+.flexitem {
+  box-sizing: border-box;
+}
+.textoverflow{
+   display: inline-block;
+  white-space: nowrap; 
+  width: 100%; 
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
+.textoverflow2{
+  overflow: hidden;
+  width: 100%;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.lessionslist {
+  margin-top: 28rpx;
+  width: 333rpx;
+  height: 330rpx;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10rpx;
+}
+
+.lessionimg {
+  width: 330rpx;
+  height: 202rpx;
+}
+
+.lessiontag {
+  position: absolute;
+  width: 97rpx;
+  height: 40rpx;
+  background: #ff771f;
+  right: 2rpx;
+  top: 0;
+  color: #fff;
+  font-size: 20rpx;
+  border-bottom-right-radius: 5rpx;
+  border-bottom-left-radius: 5rpx;
+  text-align: center;
+  line-height: 40rpx;
+}
+.activitylist{
+  width:96%;margin:30rpx auto 0rpx;
+}
+.activityimage{
+  width:180rpx;height:180rpx;
+}
+.activitytext{width:506rpx;height:180rpx;}
+.activityname{font-weight: bold;font-size:30rpx;}
+.activityteacher,.activitytype{
+font-size:24rpx;margin-right:22rpx;
+}
+.activitytime,.activitypeople{
+  color:#999;
+  font-size:24rpx;
+}
+
+/*商品排序*/
+.sort-wrap{  
+  height:90rpx;  
+  background-color:#fff;
+  width: 100%;
+
+}  
+.sort-btn{  
+   
+  width:94%;
+  margin:0 auto;
+  height:90rpx;  
+  line-height:90rpx;  
+  font-size: 28rpx;  
+  color:#333;  
+}  
+.sort-btn image{  
+  width:23rpx;
+  height:25rpx; 
+  margin-left:6rpx;  
+}
+.select{
+  color: #5578fb;
+}

@@ -1,0 +1,17 @@
+<view class="orderDetails">
+  <view class="orderListDetails">
+    <view class="productImg">
+      <view class="allnuma">{{order.allnum}}</view>
+      <image src="{{order.url}}" class="cover"></image>
+    </view>
+    <view class="productInfo">
+      <text class="userName textoverflow">物流状态：<text style="color:red">{{order.name}}</text></text>
+      <view class="flexbox3">
+        <view class="productTitle">承运来源：{{order.dev}}</view>
+        
+      </view>
+      <text class="productTitle">运单编号：{{order.type}}</text>
+      
+    </view>
+  </view>
+</view>

@@ -1,0 +1,9 @@
+.myVideo{height:425rpx;width:100%;}
+.fill { object-fit: fill; }
+.contain { object-fit: contain; }
+.cover { object-fit: cover; }
+.box{height:80rpx;line-height: 80rpx;border-bottom:1rpx solid #f0f2f6;}
+.nr{color:#5578fb;font-size:30rpx;border-bottom:5rpx solid #5578fb;width:120rpx;margin: 0 auto;}
+.jianjie{width:94%;margin:20rpx auto}
+.tit{font-size:36rpx;font-weight: bold;margin:20rpx auto}
+.txt{font-size:28rpx;line-height: 40rpx;}

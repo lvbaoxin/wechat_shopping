@@ -1,0 +1,13 @@
+<view class="container">
+  <view class="feedbacktit">
+  您有什么问题或建议想对我们说？
+  </view>
+
+  <form bindsubmit="formSubmit" class="feedbackform">
+   <textarea class="feedbacktextarea" placeholder="请详细描述您的问题，有助于我们快速定位并解决问题，或留下您宝贵的建议或意见，我们会认真进行评估的" name="textarea" value="{{textarea}}"></textarea>
+    <input class="feedbackuser" type="text" placeholder="联系人：" name="user" value="{{user}}"></input>
+   <input class="feedbacktel" type="number" placeholder="联系方式：" name="tel" value="{{tel}}"  maxlength="11" bindinput="inputPhoneNum"></input>
+  
+   <button class="feedbackbtn"  form-type="submit">提交</button>
+  </form>
+</view>

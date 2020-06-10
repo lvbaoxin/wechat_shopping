@@ -1,0 +1,16 @@
+<view class="pro ">
+    <view wx:for="{{activity}}" wx:key="{{item.activitytext}}" class="activitylist flexbox ">
+
+      <image src="{{item.activityimage}}" class="activityimage flexitem"></image>
+      <view class="activitytext flexitem">
+        <view class="activityname textoverflow2">{{item.activityname}}</view>
+        <view class="activitytype textoverflow">{{item.type}}</view>
+        <view class="flexbox3" style="margin-top:10rpx; justify-content: space-between;">
+          <view class="activitypeople flexitem">{{item.activityprice}}</view>
+          <navigator class="seedetails flexitem" hover-class="none">查看详情</navigator>
+        </view>
+
+      </view>
+    </view>
+
+  </view>

@@ -1,0 +1,29 @@
+<image src="{{smallimage}}" class="details-img"></image>
+<view>     
+	<view class="product-name-wrap">
+{{name}}
+	</view>
+	<view class="product-name-dev">
+		{{stitle}}
+	</view>
+</view>
+<view style="border-bottom:20rpx solid #f4f4f4;">
+	<view class="detailtit flexbox3">
+		<view class="flexitem">开始时间：
+			{{starttime}}
+		</view>
+		<view class="flexitem">结束时间：{{endtime}}</view>
+		<view class="flexitem">参加人数：{{submit_num}}人</view>
+	</view>
+</view>
+<view class="box">
+  <view class-="nr">
+  活动详情
+  </view>
+</view>
+<view class="jianjie">
+<rich-text nodes="{{nodes}}"></rich-text>
+<view>
+<button class="baoming {{grey == 1 ?'disabled':''}}" bindtap="baoming">立即报名</button>
+</view>
+</view>

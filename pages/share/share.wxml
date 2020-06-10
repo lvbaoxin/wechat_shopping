@@ -1,0 +1,7 @@
+<view class="bg">
+  <view class="box">
+    <image src="{{imgsrc}}" class="ewm"></image>
+    
+  </view>
+  <view class="sharetxt">长安图片可保存或发送给朋友</view>
+</view>

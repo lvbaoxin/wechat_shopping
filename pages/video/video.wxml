@@ -1,0 +1,14 @@
+<video class="myVideo fill" src="{{url}}"></video>
+
+<view class="box">
+  <view class-="nr">
+  课程介绍
+  </view>
+</view>
+
+<view class="jianjie">
+  <view class="tit">课程简介</view>
+  <!-- <view class="txt">{{neirong}}</view> -->
+  
+<rich-text nodes="{{nodes}}"></rich-text>
+</view>

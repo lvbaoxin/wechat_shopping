@@ -1,0 +1,35 @@
+<view class="search__top">
+  <form class="search__form" bindsubmit="formSubmit">
+  <view style="float:left;width:90%;">
+    <input value="{{searchValue}}" name="searchtext" placeholder="请输入产品的关键字" placeholder-class="phcolor" class="search__input" />
+    <view class="search__icon search__active" style="width:40rpx;">
+      <icon type="search" size="16" color="#888" style="float:left;margin-left:20rpx;"></icon>
+    </view>
+    <view wx:if="{{showClearBtn}}" catchtap="searchActiveChangeclear" form-type="reset" class="clearButton">
+      <icon type="clear" size="18" color="#aaa" style="position:absolute;right:90rpx;top:8rpx;z-index:3;"></icon>
+    </view>
+    </view>
+    <button  formType="submit" class="searchData" >搜索</button >
+  </form>
+  
+</view>
+<view class="topheight"></view> 
+<view class="searchinfo">
+  <!-- <view class="top">
+    <text class='title'>大家都在搜索</text>
+    <view class="o-hidden">
+      <view wx:for="{{searchterm}}" wx:key="{{index}}" data-id="{{item.ID}}" bindtap='bindhistory' data-itemname="{{item.KeyName}}">{{item.KeyName}}</view>
+    </view>
+  </view> 
+  <view class="center"></view> -->
+  <view class="bottom">
+    <text class='title'>热门搜索</text> 
+    <view class="o-hidden">
+      <view  class="history" wx:for="{{searchData}}" wx:key="item" bindtap='bindhistory' data-name="{{item.name}}">{{item.name}}</view>
+    </view>
+    <!-- <view class="delete" bindtap='deleteHistory' wx:if="{{deletebtnhidden}}">
+      <text>清除历史记录</text> 
+    </view> -->
+  </view> 
+</view> 
+

@@ -1,0 +1,16 @@
+<view class="pro ">
+    <view wx:for="{{activity}}" wx:key="{{item.activitytext}}" class="activitylist flexbox ">
+
+      <image src="{{item.smallimage}}" class="activityimage flexitem"></image>
+      <view class="activitytext flexitem">
+        <view class="activityname textoverflow2">{{item.name}}</view>
+        <view class="activitytype textoverflow">{{item.title}}</view>
+        <view class="flexbox3" style="margin-top:10rpx; justify-content: space-between;">
+          
+          <view class="seedetails flexitem" hover-class="none" data-id="{{item.id}}" bindtap="watch">立即观看</view>
+        </view>
+
+      </view>
+    </view>
+
+  </view>

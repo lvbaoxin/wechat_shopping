@@ -1,0 +1,170 @@
+<!--pages/detail/detail.wxml-->
+<!-- banner -->
+<import src="../template/template.wxml" />
+
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{thumbimages}}">
+    <swiper-item>
+      <image src="{{item}}" data-src="{{item}}" bindtap="previewImage" mode="widthFix" class="detailbn"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<!--商品价格和商品描述-->
+<view>
+  <view class="product-price-wrap">
+    <view>
+      <p class="product-price-new">￥{{price}}</p>
+    </view>
+  </view>
+  <view class="product-name-wrap">
+    {{name}}
+  </view>
+</view>
+<view style="border-bottom:20rpx solid #f4f4f4;">
+  <view class="detailtit flexbox3">
+    <view class="flexitem">是否包邮：
+      {{postagedata == 0 ? '是':'否'}}
+    </view>
+    <view class="flexitem">月销：{{sellnum}}</view>
+    <view class="flexitem">邮费价格：{{postageprice}}元</view>
+  </view>
+   <view class="detailtit flexbox3">
+    <view class="flexitem">
+      重量:{{guige}}
+    </view>
+    <view class="flexitem" style="color:#000;">
+    <view class="flexitem">生产日期:{{birthdaytime}}</view>
+      <!-- <picker bindchange="bindPickerChange" value="{{index}}" range="{{multiArray}}">
+        <view class='time'>
+          <text class='delivery-text'>{{multiArray[index]}}</text>
+          <image src='../../images/icon_arrow.png' class='delivery-arrow right-arrow'></image>
+        </view>
+      </picker> -->
+
+
+    </view>
+  </view> 
+  <view class="detailtit flexbox2">
+    <view class="flexitem">
+      服务
+    </view>
+    <view class="flexitem" style="color:#000;margin-left:30rpx;">{{serve}}</view>
+  </view>
+</view>
+
+<view class="details">
+  <view class="detailtit flexbox3" style="width:98%" wx:if="{{createcode}}">
+    <view class="flexitem">
+      <view class=" flexbox2" >
+        <view class="flexitem">
+          参数
+        </view>
+        <view class="flexitem" style="color:#000;margin-left:30rpx;" >生产许可证编号:{{createcode}}</view>
+      </view>
+    </view>
+    <!-- <image src="../../images/toolicon4.png" class="toolimg flexitem"></image> -->
+  </view>
+  <view class="swiper-tab">
+    <block wx:for="{{swipertab}}" wx:key="sptab">
+      <view class="swiper-tab-list {{currtab == item.index ? 'on' : ''}}" data-current="{{item.index}}" bindtap="tabSwitch">{{item.name}}</view>
+    </block>
+  </view>
+  <view hidden="{{lunbotu}}">
+   <block wx:for-items="{{infoimages}}" wx:key="name" >
+      <image class="image_detail" src="{{item}}" mode="widthFix" />
+    </block>
+</view>
+<view hidden="{{pingjia1}}">
+
+    <block wx:for="{{pingjia}}" wx:key="name"  >
+          <view class="flexbox3 pingjialist">
+            <view class="flexitem">
+              <image class="touxiang" src="{{item.avatar}}" mode="widthFix" />
+            </view>
+            <view class="flextiem pingjiatxt">
+              <view class="flexbox3">
+                <view class="flextiem title">{{item.nickname}}</view>
+                <view class="flextiem">{{item.createtime_ymd}}</view>
+              </view>
+              <view class="pjtxt">{{item.contents}}</view>
+            </view>
+          </view>
+
+        </block>
+</view>
+  <!-- <scroll-view scroll-y="true">
+    <text>商品详情</text>
+    <block wx:for-items="{{goodsItem.details}}" wx:key="name">
+      <image class="image_detail" src="{{item}}" mode="widthFix" />
+    </block>
+    <view class="temp"></view>
+  </scroll-view> -->
+
+  <!-- <swiper current="{{currtab}}" class="swiper-box" duration="300" style="height:100vh" bindchange="tabChange">
+   
+    <swiper-item>
+      <scroll-view scroll-y="true">
+        <block wx:for-items="{{infoimages}}" wx:key="name">
+          <image class="image_detail" src="{{item}}" mode="widthFix" />
+        </block>
+        <view class="temp"></view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true">
+        <block wx:for="{{pingjia}}" wx:key="name">
+          <view class="flexbox3 pingjialist">
+            <view class="flexitem">
+              <image class="touxiang" src="{{item.avatar}}" mode="widthFix" />
+            </view>
+            <view class="flextiem pingjiatxt">
+              <view class="flexbox3">
+                <view class="flextiem title">{{item.nickname}}</view>
+                <view class="flextiem">{{item.createtime_ymd}}</view>
+              </view>
+              <view class="pjtxt">{{item.contents}}</view>
+            </view>
+          </view>
+
+        </block>
+      </scroll-view>
+    </swiper-item>
+  </swiper> -->
+
+
+</view>
+<!-- 底部悬浮栏 -->
+<view class="detail-nav">
+  <!-- <image bindtap="addLike" src="{{isLike?'../../images/enshrine_select.png':'../../images/enshrine.png'}}" /> -->
+  <view class="line_nav"></view>
+  <image bindtap="toCar" src="../../images/cart1.png" />
+  <button data-goodid="1" class="button-green" bindtap="toggleDialog">加入购物车</button>
+  <button class="button-red" bindtap="immeBuy" formType="submit">立即购买</button>
+</view>
+
+<!--加入购物车-->
+
+<view class="jiaru" hidden="{{jiaru}}">
+   
+      
+   <view class="detailtit flexbox3" style="width:60%">
+    <view class="flexitem">
+      <view class=" flexbox2" >
+        <view class="flexitem">
+         购买数量
+        </view>
+        <view class="flexitem" style="color:#000;margin-left:30rpx;" >
+        <view class="onum">
+          <view bindtap='can' class="suan">-</view>
+          <view class="suan1">{{count}}</view>
+          <view bindtap='add' class="suan">+</view>
+      </view>
+
+        </view>
+      </view>
+    </view>
+  </view>
+<view class="detailtit" style="width:60%;border-bottom:0;margin-top:20rpx;text-align:center">
+    <button data-num="{{count}}" class="button-addCar" bindtap="addCar" formType="submit">确定</button> 
+  </view>
+</view>

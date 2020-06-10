@@ -1,0 +1,20 @@
+<view class="about">
+ <image src="{{aboutlogo}}" class="aboutlogo"></image>
+ <view>{{version}}</view>
+</view>
+<view class="titbox">
+  <view class="abouttit flexbox3">
+    <view class="flexitem">
+    版本号
+    </view>
+    <view class="flexitem">
+    {{version}}
+    </view>
+  </view>
+  <view class="abouttit" wx:if="{{abouttxt}}">
+    关于我们
+  </view>
+  <view class="abouttxt" wx:if="{{abouttxt}}">
+    {{abouttxt}}
+  </view>
+</view>
